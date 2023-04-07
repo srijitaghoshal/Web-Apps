@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
 
+
 const ItemSchema = new mongoose.Schema ({
   _id: mongoose.SchemaTypes.String,
   name: mongoose.SchemaTypes.String,
@@ -8,6 +9,7 @@ const ItemSchema = new mongoose.Schema ({
   price: mongoose.SchemaTypes.Number,
   store_id: mongoose.SchemaTypes.String
 });
+
 
 export const Item = mongoose.model('items', ItemSchema);
 
@@ -17,6 +19,7 @@ export const Store = mongoose.model('stores', {
   name: mongoose.SchemaTypes.String,
   items: [ItemSchema]
 });
+
 
 
 

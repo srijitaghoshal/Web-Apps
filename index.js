@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
 // Connect to the MongoDB database once and attach the connection pool to the application instance
 await mongoose.connect('mongodb://localhost:27017/stores')
 
@@ -19,7 +20,9 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use('/', StoresRouter);
+
+app.use('/stores', StoresRouter);
+
 
 app.listen(port, () => {
   console.log(`listening on localhost:${port}...`);

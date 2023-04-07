@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
 
 
-export const Item = mongoose.model('items', {
+const ItemSchema = new mongoose.Schema ({
   _id: mongoose.SchemaTypes.String,
   name: mongoose.SchemaTypes.String,
   quantity: mongoose.SchemaTypes.Number,
@@ -10,9 +10,16 @@ export const Item = mongoose.model('items', {
   store_id: mongoose.SchemaTypes.String
 });
 
+
+export const Item = mongoose.model('items', ItemSchema);
+
+//Store holds items 
 export const Store = mongoose.model('stores', {
   _id: mongoose.SchemaTypes.String,
   name: mongoose.SchemaTypes.String,
-  // items: [Item]
+  items: [ItemSchema]
 });
+
+
+
 

@@ -6,8 +6,10 @@ export default function Wrapper() {
     <link rel="stylesheet" href="style.css" />
       <header>
         <div className='top-link'>
-          <Link to="/stores"><h1>View all stores</h1></Link>
-          <Link to="/stores/new"><h1>Create a new store</h1></Link>
+          <Link to="/animals/cat"><h1>View all cats</h1></Link>
+          <Link to="/animals/dog"><h1>View all dogs</h1></Link>
+          <Link to="/donation"><h1>View our donations</h1></Link>
+          <Link to="/donation/new"><h1>Make a donation</h1></Link>
         </div>
       </header>
 

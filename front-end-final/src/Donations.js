@@ -19,7 +19,7 @@ export default function Donations() {
   );
 }
 
-async function fetchDonationss() {
+async function fetchDonations() {
   const response = await fetch(`http://localhost:3001/donation` );
   const res_obj = await response.json();
   console.log(res_obj);
